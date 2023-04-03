@@ -1,5 +1,5 @@
 ##finds inverse for square matrix
-inverse <- function(x){
+inverse <- function(x = matrix()){
   ##non square matrix don't have inverse
   if(nrow(x) != ncol(x))
   {
@@ -23,7 +23,7 @@ inverse <- function(x){
 }
 
 ##special matrix function that caches inverse
-makeCacheMatrix <- function(x = numeric()) {
+makeCacheMatrix <- function(x = matrix()) {
   invr = NULL
   
   set <- function(y){
@@ -41,7 +41,7 @@ makeCacheMatrix <- function(x = numeric()) {
 }
 
 ##cache for inverse of matrix
-cacheSolve <- function(x){
+cacheSolve <- function(x, ...){
   invr <- x$getInverse()
   
   if(!is.null(invr)){
